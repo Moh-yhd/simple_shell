@@ -8,8 +8,7 @@
  *
  * Return: 0
  */
-int main(__attribute__((unused)) int ac, __attribute__((unused)) char **av,
-		char **en)
+int main(__attribute__((unused)) int ac, char **av, char **en)
 {
 	size_t len = 0;
 	char *token = NULL, *buffer = NULL, *argv[100];
@@ -41,7 +40,7 @@ int main(__attribute__((unused)) int ac, __attribute__((unused)) char **av,
 			else if ((_strcmp(argv[0], "env")) != 0)
 			{
 				if (execve(argv[0], argv, en) == -1)
-					perror("Error:");
+					perror(av[0]);
 			}
 		}
 	}
