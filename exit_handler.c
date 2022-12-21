@@ -8,7 +8,6 @@ void _ext(char *s)
 {
 	if ((_strcmp(s, "exit\n")) == 0)
 	{
-		free(s);
 		exit(0);
 	}
 }

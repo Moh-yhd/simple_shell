@@ -19,8 +19,6 @@ int main(__attribute__((unused)) int ac, __attribute__((unused)) char **av,
 	{
 		write(STDIN_FILENO, "#cisfun$ ", 9);
 		chars_read = getline(&buffer, &len, stdin);
-		if (chars_read == -1)
-			free(buffer);
 
 		_ext(buffer);
 
