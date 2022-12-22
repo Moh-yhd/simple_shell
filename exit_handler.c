@@ -6,8 +6,6 @@
  */
 void _ext(char *s)
 {
-	if ((_strcmp(s, "exit\n")) == 0)
-	{
+	if ((_strcmp(s, "exit")) == 0)
 		exit(0);
-	}
 }
