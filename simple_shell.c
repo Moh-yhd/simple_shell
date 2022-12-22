@@ -3,14 +3,13 @@
 /**
  * main - super simple shell
  * @ac: number of arguments passed to main
- * @av: arguments vector
- * @en: environment variables vector
+ * @argv: arguments vector
  *
  * Return: 0
  */
 int main(__attribute__((unused)) int ac, char **argv)
 {
-	size_t len = 0;
+	size_t len = 1024;
 	char *token = NULL, *buffer = NULL;
 	int i, chars_read, status;
 
@@ -36,7 +35,8 @@ int main(__attribute__((unused)) int ac, char **argv)
 					wait(&status);
 				else
 				{
-					if (execve(argv[0], argv, environ) == -1)
+					if (execve(argv[0], argv, environ)
+							== -1)
 					{
 						perror(argv[0]);
 						exit(0);
