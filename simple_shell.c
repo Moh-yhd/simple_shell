@@ -8,10 +8,10 @@
  *
  * Return: 0
  */
-int main(__attribute__((unused)) int ac, char **av, char **en)
+int main(__attribute__((unused)) int ac, char **argv, char **en)
 {
 	size_t len = 0;
-	char *token = NULL, *buffer = NULL, *argv[100];
+	char *token = NULL, *buffer = NULL;
 	int i, chars_read, status;
 
 	while (1)
@@ -38,7 +38,7 @@ int main(__attribute__((unused)) int ac, char **av, char **en)
 				{
 					if (execve(argv[0], argv, en) == -1)
 					{
-						perror(av[0]);
+						perror(argv[0]);
 						exit(0);
 					}
 				}
