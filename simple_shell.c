@@ -8,7 +8,7 @@
  *
  * Return: 0
  */
-int main(__attribute__((unused)) int ac, char **argv, char **en)
+int main(__attribute__((unused)) int ac, char **argv)
 {
 	size_t len = 0;
 	char *token = NULL, *buffer = NULL;
@@ -27,7 +27,7 @@ int main(__attribute__((unused)) int ac, char **argv, char **en)
 				token = strtok(NULL, " \n");
 			}
 			argv[i] = NULL;
-			_env(argv[0], en);
+			_env(argv[0], environ);
 			_ext(argv[0]);
 			if ((_strcmp(argv[0], "exit")) != 0 &&
 					(_strcmp(argv[0], "env")) != 0)
@@ -36,7 +36,7 @@ int main(__attribute__((unused)) int ac, char **argv, char **en)
 					wait(&status);
 				else
 				{
-					if (execve(argv[0], argv, en) == -1)
+					if (execve(argv[0], argv, environ) == -1)
 					{
 						perror(argv[0]);
 						exit(0);
