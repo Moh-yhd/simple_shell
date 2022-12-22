@@ -11,7 +11,7 @@
 int main(__attribute__((unused)) int ac, char **av, char **en)
 {
 	size_t len = 0;
-	char *cmd, *token = NULL, *buffer = NULL, *argv[100];
+	char *token = NULL, *buffer = NULL, *argv[100];
 	int i, chars_read, status;
 
 	while (1)
@@ -27,7 +27,6 @@ int main(__attribute__((unused)) int ac, char **av, char **en)
 				token = strtok(NULL, " \n");
 			}
 			argv[i] = NULL;
-			cmd = create_cmd(argv[0]);
 			_env(argv[0], en);
 			_ext(argv[0]);
 			if ((_strcmp(argv[0], "exit")) != 0 &&
