@@ -12,7 +12,7 @@ char *create_cmd(char *cmd)
 	char *token, *pathname, *path = _getenv("PATH");
 
 	token = strtok(path, ":");
-	while (token)
+	while (token != NULL)
 	{
 		pathname = malloc((_strlen(token) + _strlen(cmd) + 2)
 				* sizeof(char));

@@ -8,7 +8,7 @@
  */
 char *create_cmd(char *cmd)
 {
-	struct stat st;
+	struct stat buf;
 	char *token, *pathname, *path = getenv("PATH");
 
 	token = strtok(path, ":");
@@ -29,7 +29,7 @@ char *create_cmd(char *cmd)
 		strcat(pathname, cmd);
 		printf("%s\n", pathname);
 		printf("token: %s\n", token);
-		if (stat(pathname, &st) == 0)
+		if (stat(pathname, &buf) == 0)
 			return (pathname);
 		//printf("%s\n", pathname);
 
@@ -43,7 +43,7 @@ char *create_cmd(char *cmd)
 
 int main(void)
 {
-	char *cmd = create_cmd("/bin/ls");
+	char *cmd = create_cmd("ls");
 
 	printf("cmd: %s\n", cmd);
 }
