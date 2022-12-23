@@ -9,7 +9,9 @@ void _builtin(char *s)
 	int i;
 
 	if ((_strcmp(s, "exit")) == 0)
+	{
 		exit(0);
+	}
 
 	if ((_strcmp(s, "env")) == 0)
 	{
