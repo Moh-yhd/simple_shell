@@ -25,7 +25,9 @@ char *create_cmd(char *cmd)
 		_strcat(pathname, "/");
 		_strcat(pathname, cmd);
 		if (stat(pathname, &buf) == 0)
+		{
 			return (pathname);
+		}
 
 		free(pathname);
 		token = strtok(NULL, ":");
