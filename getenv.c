@@ -26,7 +26,9 @@ char *_getenv(char *envarname)
 			name_ptr++;
 		}
 		if ((*env_ptr == '=') && (*name_ptr == '\0'))
+		{
 			return (env_ptr + 1);
+		}
 
 		environ_cursor++;
 	}
