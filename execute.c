@@ -22,7 +22,9 @@ int _execute(char **argv)
 	{
 		ex_name = create_cmd(argv[1]);
 		if (ex_name != NULL)
+		{
 			found = 1;
+		}
 	}
 
 	if (found)
