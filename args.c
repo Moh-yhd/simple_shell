@@ -14,4 +14,5 @@ int _argck(int ac)
 		perror("Error");
 		return (127);
 	}
+	return (0);
 }
