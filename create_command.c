@@ -8,7 +8,7 @@
  */
 char *create_cmd(char *cmd)
 {
-	struct stat st;
+	struct stat buf;
 	char *token, *pathname, *path = _getenv("PATH");
 
 	token = strtok(path, ":");
@@ -24,7 +24,7 @@ char *create_cmd(char *cmd)
 		_strcpy(pathname, token);
 		_strcat(pathname, "/");
 		_strcat(pathname, cmd);
-		if (stat(pathname, &st) == 0)
+		if (stat(pathname, &buf) == 0)
 			return (pathname);
 
 		free(pathname);
