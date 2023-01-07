@@ -3,6 +3,7 @@
 /**
  * create_cmd - creates command that will be first element of execve
  * @cmd: first element of argv as typed
+ * @path: path name (found modified through get env function)
  *
  * Return: pointer to created command
  */
