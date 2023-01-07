@@ -27,7 +27,6 @@ char *create_cmd(char *cmd, char *path)
 		if (stat(pathname, &buf) == 0)
 			return (pathname);
 
-		printf("pathname: %s\n", pathname);
 		free(pathname);
 		token = strtok(NULL, ":");
 	}
