@@ -8,7 +8,7 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 
-extern char **environ;
+//extern char **environ;
 
 /*
  * File : sshell.h
@@ -22,7 +22,7 @@ char *_getenv(char *key, char **env);
 char *create_cmd(char *cmd, char *path);
 char *_strcat(char *dest, char *src);
 char *_strcpy(char *dest, char *src);
-int _execute(char **argv);
+int _execute(char **argv, char **env);
 void sighandler(int sig);
 int _argck(int ac);
 char *_strdup(char *src);

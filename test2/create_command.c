@@ -10,10 +10,22 @@ char *create_cmd(char *cmd, char *path)
 {
 	struct stat buf;
 	char *token = NULL, *pathname = NULL;
+	
+	//path = getenv("PATH");
+	
+	//setenv("PATH", path, 1);
 
+
+	/*while (*env)
+	{
+		printf("%s\n", *env);
+		env++;
+	}*/
+	//printf("path: %s\n", path);
 	token = strtok(path, ":");
 	while (token != NULL)
 	{
+		
 		pathname = malloc((_strlen(token) + _strlen(cmd) + 2)
 				* sizeof(char));
 		if (pathname == NULL)
@@ -30,7 +42,10 @@ char *create_cmd(char *cmd, char *path)
 		printf("pathname: %s\n", pathname);
 		free(pathname);
 		token = strtok(NULL, ":");
+		printf("token: %s\n", token);
 	}
+
+
 	return (NULL);
 }
 
